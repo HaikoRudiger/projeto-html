@@ -7,7 +7,7 @@ try:
     print("Conectado ;)")
     
 except Exception:
-    print("Se fudeu comprade kkk :(")
+    print("Não deu boa :(")
 
 if conn is not None:
     
@@ -15,7 +15,7 @@ if conn is not None:
     
     cursor = conn.cursor()
     
-    cursor.execute('CREATE TABLE  jogos (id serial, nome VARCHAR(15)NOT NULL, categoria VARCHAR(15)NOT NULL, console varchar(15) NOT NULL, PRIMARY KEY(id));')
+    cursor.execute('CREATE TABLE  pessoas (id serial, nome VARCHAR(15)NOT NULL, idade INT NOT NULL, altura varchar(15) NOT NULL, PRIMARY KEY(id));')
     print('Sua tabela jogos foi criada!')
 
     cursor.execute('CREATE TABLE usuarios  (nome VARCHAR(15) NOT NULL, nickname VARCHAR(30)NOT NULL, senha VARCHAR(30)NOT NULL,  PRIMARY KEY(nickname) );')
@@ -24,3 +24,4 @@ if conn is not None:
     conn.commit()
     cursor.close()
     conn.close()
+    
