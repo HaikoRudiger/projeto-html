@@ -1,0 +1,26 @@
+{% extends "template.html"%}
+{%block conteudo%}
+
+<body>
+    <div class="container">
+            <form action="/autenticar" method="post">
+
+                <input type="hidden" name="proximo" value="{{ proximo or url_for('inicio') }}">
+
+                <p><label>Nome Usuario</label>
+                    <input class='form-control' type="text" name="usuario" required>
+                </p>
+                <p><label>Senha</label>
+                    <input class='form-control' type="password" name="senha" required>
+                </p>
+                <p>
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </p>
+                
+            </form>
+    </div>  
+    <footer>
+
+    </footer>
+</body>
+{%endblock%}

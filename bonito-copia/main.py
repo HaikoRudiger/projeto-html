@@ -19,6 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = '{SGBD}://{usuario}:{senha}@{servidor}/{
     database = "postgres"    
 )
 
+
 #----------------------------------------------------------------------
 
 db = SQLAlchemy(app)
@@ -80,7 +81,7 @@ def inicio():
 
 @app.route('/autenticar', methods =['POST',])
 def autenticar():
-    usuario = Usuarios.query.filter_by(nickname=request.form['usuario']).first()
+    usuario = Usuario.query.filter_by(nickname=request.form['usuario']).first()
     if usuario:
         
         if request.form['senha'] == usuario.senha:
